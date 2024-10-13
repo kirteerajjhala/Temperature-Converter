@@ -1,0 +1,61 @@
+body{
+    color: #ffff;    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h1{
+    text-align: center;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    padding: 50px;
+    height: 70px;
+    gap: 70px;
+
+}
+
+.input-div{
+    
+    font-weight: bold;
+    width: 170px;
+    height: 130px;
+    background-color: rgb(241, 36, 36);
+    border-radius: 7px;
+
+}
+h2{
+    text-align: center;
+}
+    
+
+.input-div1{
+   
+    font-weight: bold;
+    width: 170px;
+    height: 130px;
+    background-color: rgb(65, 29, 246);
+    border-radius: 7px;
+    
+}
+.Celsius, .Fahrenheit{
+    margin: 0%;
+    padding: 8px 0px 0px 9px;
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.inp{
+    font-weight: bold;
+    font-size: 50px;
+   margin-top: 40px;
+    font-size: 15px;
+    padding-left: 30px;
+    width: 100px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    color: #ffff;
+    
+}

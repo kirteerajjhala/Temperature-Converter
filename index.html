@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <style>
+        body {
+            color: #fff;    
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #000000; 
+            margin: 0;
+            padding: 20px;
+            height: 100vh;
+            
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: rgb(255, 255, 255);
+
+        }
+
+        .container {
+            display: flex; 
+            align-items: center;
+            justify-content: center;
+            gap: 15px; 
+      
+        }
+
+        .input-div, .input-div1 {
+            font-weight: bold;
+            width: 150px; 
+            height: 130px; 
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            position: relative;
+            overflow: hidden; 
+        }
+
+        .input-div {
+            background-color: rgba(249, 18, 18, 0.8); 
+        }
+
+        .input-div1 {
+            background-color: rgba(58, 20, 245, 0.8); 
+        }
+
+        .Celsius, .Fahrenheit {
+            margin: 0;
+            padding: 6px; 
+            position: absolute;
+            top: 6px;
+            left: 6px; 
+            font-size: 14px; 
+            z-index: 1; 
+        }
+
+        .inp {
+            font-weight: bold;
+            font-size: 18px; 
+            margin-top: 85px; 
+            padding: 3px; 
+            width: 60%; 
+            height: 15px; 
+            background-color: transparent;
+            border: none; 
+            border-radius: 5px; 
+            color: #fff;
+
+            transition: background-color 0.3s;
+            position: relative;
+            z-index: 2; 
+        }
+
+        .inp:focus {
+            background-color: rgba(255, 255, 255, 0.1);
+            outline: none; 
+        }
+
+        .input-div:hover, .input-div1:hover {
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            transform: scale(1.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+  
+        .temp-symbol {
+            position: absolute;
+            font-size: 90px; 
+            color: rgba(255, 255, 255, 0.1); 
+            left: 50%; 
+            top: 50%; 
+            transform: translate(-50%, -50%); 
+            pointer-events: none; 
+            z-index: 0; 
+        }
+    </style>
+</head>
+<body>
+    <h2>Temperature Converter</h2>
+    <div class="container">
+        <div class="input-div">
+            <h4 class="Celsius">Celsius</h4>
+            <div class="temp-symbol">°C.</div> 
+            <input type="number" value="0" id="cel" class="inp">
+        </div>
+        <div class="input-div1">
+            <h4 class="Fahrenheit">Fahrenheit</h4>
+            <div class="temp-symbol">°F.</div>
+            <input type="number" value="32" id="fah" class="inp">
+        </div>
+    </div>
+    <script>
+        const cel = document.querySelector("#cel");
+        const fah = document.querySelector("#fah");
+        
+        cel.addEventListener('input', function() {
+            let c = parseFloat(this.value);
+            let f = (c * 9/5) + 32;
+
+            if (!isNaN(c)) {
+                fah.value = f.toFixed(2);
+            } else {
+                fah.value = '';
+            }
+        });
+
+        fah.addEventListener('input', function() {
+            let f = parseFloat(this.value);
+            let c = (f - 32) * 5/9;
+
+            if (!isNaN(f)) {
+                cel.value = c.toFixed(2);
+            } else {
+                cel.value = '';
+            }
+        });
+    </script>
+</body>
+</html>
